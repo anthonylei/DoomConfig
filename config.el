@@ -33,7 +33,13 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
+
+;; Copy Env path to Emacs
+;;(use-package! exec-path-from-shell-initialize)
+
+;; Enable Copy out of Emacs
+(setq select-enable-clipboard t)
 
 ;; Project
 (setq projectile-project-search-path "~/source/")
@@ -41,6 +47,9 @@
 ;; Rust LSP
 (after! rustic
   (setq lsp-rust-server 'rust-analyzer))
+
+;; Go LSP
+;;(setq lsp-gopls-server-path "/home/tony/go/bin/gopls")
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
